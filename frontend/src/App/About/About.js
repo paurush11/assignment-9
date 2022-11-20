@@ -32,7 +32,7 @@ const About = () => {
         }
       />
 
-<div className={classes.topic}>Our Members</div>
+    <div className={classes.topic}>Our Members</div>
       <div className={classes.cardContainer}>
 
         {users.map((element) => (

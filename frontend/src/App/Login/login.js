@@ -3,6 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import PageCard from "../../Components/PageCard/PageCard";
 import classes from "./Login.module.css";
 import axios from "axios";
+import { passwordStrength } from "check-password-strength";
 
 const Login = (props) => {
   
@@ -13,8 +14,6 @@ const Login = (props) => {
     const [myPath, setPath] = useState("/");
   
     const [navbarDisplay, setnavbarDisplay] =  useState(displayNav);
-    
-   
     const [data, setdata] = useState({
       email: "",
       password: "",
@@ -29,6 +28,31 @@ const Login = (props) => {
     };
   
     const submit = async () => {
+      
+      try{
+        if(data.email === ""){
+          throw new Error("Empty Email");
+        }
+        const pattern = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/;
+        const result = pattern.test(data.email);
+        if(result!== true){
+          throw new Error("Invalid email format");  
+        }
+        if(data.password === ""){
+          throw new Error("Empty Password");
+        }
+        const ans = passwordStrength(data.password).value;
+        console.log(ans);
+        if (ans === "Weak" || ans === "Too weak") 
+        throw new Error("Password is Weak!! Kindly use minimum 1 Uppercase, 1 Lowercase and a minimum lemgth of 8 characters");
+        
+      }catch(error){
+        console.log(error.message);
+        setdisplay("block")
+        setmessage(error.message);
+        return;
+      }
+
       try {
         const apiData = await axios.post(
           "http://localhost:8080/user/login",
