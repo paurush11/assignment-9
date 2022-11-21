@@ -290,3 +290,16 @@ button {
   justify-content:space-around;
   width:40%;
 }
+
+.specialcardContainer{
+  background: linear-gradient(#185247, #483248);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 3%;
+  font-family: 'Kalam';
+  border-radius:25px;
+  margin-bottom:2%;
+  font-size:25px;
+  color:white
+}
+

@@ -31,6 +31,15 @@ const About = () => {
           ""
         }
       />
+
+<div className={classes.topic}>Our Members</div>
+      <div className={classes.cardContainer}>
+
+        {users.map((element) => (
+         
+          <UserCard email={element.email} name = {element.full_name}/>
+        ))}
+      </div>
       <div className={classes.topic}>Our Ambition</div>
       <div className={classes.specialcardContainer}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -52,20 +61,17 @@ const About = () => {
          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
          Aldus PageMaker including versions of Lorem Ipsum
       </div>
+      <div className = {classes.space}></div>
       
-      <div className={classes.topic}>Our Members</div>
-      <div className={classes.cardContainer}>
-
-        {users.map((element) => (
-          <UserCard email={element.email} />
-        ))}
-      </div>
     </div>
   );
 };
 
-const UserCard = ({ email }) => {
-  return <div className={classes.card}>{email}</div>;
+const UserCard = ({ email , name}) => {
+  return <div className={classes.card}>
+    Name - {name} <br/>
+    Email - {email}
+    </div>;
 };
 
 export default About;

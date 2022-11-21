@@ -1,4 +1,4 @@
-import { userModel } from "../schemas/User";
+import { userModel } from "../model/User";
 import { encryptPassword, verifyHash } from "../utils/bcrypt";
 import { sendErrorResponse, sendSuccessResponse } from "../utils/response";
 import { passwordStrength } from "check-password-strength";
