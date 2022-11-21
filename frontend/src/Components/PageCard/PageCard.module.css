@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+.Container{
+    margin:0px 50px;
+    transition: all 200ms;
+    padding:20px;
+    text-align: center;
+    color: aliceblue;
+    
+}
+.Container div{
+    margin-top:20px;
+}
+
+
+.titleTag{
+    font-size: 80px;
+    font-family: 'Poor Story', cursive;
+    font-weight: bold;
+    transition: all 500ms;
+    display: inline-block;
+    margin-right: 10px;
+    text-shadow: 1px 2px 3px #999;
+  }
+
+.titleTag:hover{
+    filter: blur(3px);
+    animation: vibrate 50ms linear infinite forwards;
+}
+@keyframes vibrate{
+    0% {
+        transform: translateX(-1px) translateY(1px);
+    }
+    25% {
+        transform: translateX(-10px) translateY(1px);
+    }
+    100% {
+        transform: translateX(1px) translateY(-2px);
+    }
+}

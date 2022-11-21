@@ -1,0 +1,34 @@
+.Container {
+  padding: 1%;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+
+.Container a {
+  margin-right: 20px;
+  color: rgb(252, 252, 252);
+}
+
+.alink,
+.alink:hover,
+.alink:focus,
+.alink:active,
+.alink.active {
+    outline: 0;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 1%;
+    margin-right: 2%;
+}
+
+.alink {
+    color: #1ee2e7;
+}
+
+.alink:hover,
+.alink:focus,
+.alink:active,
+.alink.active {
+    color: #17d0d5;
+}
